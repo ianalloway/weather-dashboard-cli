@@ -13,7 +13,7 @@ def main():
         city_input = sys.argv[1]
         print(f"Searching for city: {city_input}...")
         lat, lon, city_name = service.get_coordinates(city_input)
-        if not lat:
+        if lat is None or lon is None:
             print(f"Error: Could not find coordinates for city '{city_input}'.")
             return
     elif len(sys.argv) >= 3:
